@@ -43,5 +43,5 @@ def test_plotter(tmp_path):
         baseline_subtracted=True, set_zero=False, normalized=False, smoothed=False, peaks=None,
         plot=(fig, ax), xlim=(0, 50), xticks_minor=True, yticks_minor=2,
         legend=True, colors=None, markers=None, linestyles=None,
-        savefig=f'{tmp_path}/my_scans_figure.jpg',
+        savefig=f'{tmp_path}/my_scans_figure.svg',
     )
