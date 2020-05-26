@@ -6,7 +6,7 @@ from pytest import raises
 
 sys.path.insert(0, '..')
 
-from dsc.scan import Scan, scans_from_csvs
+from dsc.scan import scans_from_csvs
 
 
 def test_read_csv():

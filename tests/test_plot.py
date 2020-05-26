@@ -1,10 +1,10 @@
 import sys
-from pytest import raises
 
+import matplotlib.pyplot as plt
 sys.path.insert(0, '..')
 
-from dsc.plot import *
-from dsc.scan import Scan, scans_from_csvs
+from dsc.plot import cycle_values, plotter, setup_axis
+from dsc.scan import scans_from_csvs
 
 
 def setup():
@@ -45,4 +45,3 @@ def test_plotter(tmp_path):
         legend=True, colors=None, markers=None, linestyles=None,
         savefig=f'{tmp_path}/my_scans_figure.jpg',
     )
-

@@ -165,6 +165,9 @@ def setup_axis(
     # make ticks multiples of the tick width
     make_ticks = lambda start, end, tw: np.arange(int(start/tw)*tw, int(end/tw + 1)*tw, tw)
 
+    backwards = False
+    if xlim is not None:
+        xticks = up(xticks, make_ticks(*xlim, 10))
     xlabel = up(xlabel, 'Temperature (°C)')
     ylabel = up(ylabel, 'Heat Flow (mW)')
 

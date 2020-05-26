@@ -19,7 +19,7 @@ class Scan:
 
         self.temps = temps
         self.heat_flows = heat_flows
-        self.name = name if not name is None else ''
+        self.name = name if name is not None else ''
 
     def __iter__(self):
         """
