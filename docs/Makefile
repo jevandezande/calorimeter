@@ -3,8 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = dsc
+SPHINXBUILD   = python3 -msphinx
+SPHINXPROJ    = calorimeter
 SOURCEDIR     = .
 BUILDDIR      = _build
 

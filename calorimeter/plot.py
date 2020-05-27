@@ -26,7 +26,7 @@ def plotter(
     :param title: title of the plot
     :param style: plot-style (currently does nothing)
     :param baseline_subtracted: amount to subtract, if True, use the lowest value from each Scan
-    :param set_zero: set x_value (or range of values) at which y (or y average) is set to 0
+    :param set_zero: set x-value (or range of values) at which y (or y average) is set to 0
     :param normalized: normalize all of the curves at given point (or highest if True)
     :param smoothed: number of points with which to smooth
     :param peaks: dictionary of peak picking parameters
@@ -155,10 +155,10 @@ def setup_axis(
     :param ax: axis to setup
     :param style: plot-style (currently does nothing)
     :param title: title of the axis
-    :param *lim: limits for *-axis values
-    :param *ticks: *-axis ticks
-    :param *ticks_minor: *-axis minor ticks
-    :param *label: label for the *-axis
+    :param `*lim`: limits for `*-axis` values
+    :param `*ticks`: `*-axis` ticks
+    :param `*ticks_minor`: `*-axis` minor ticks
+    :param `*label`: label for the `*-axis`
     """
     # update values that are None
     up = lambda v, d: d if v is None else v

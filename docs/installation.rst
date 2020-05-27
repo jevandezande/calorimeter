@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install DSC, run this command in your terminal:
+To install Calorimeter, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install dsc
+    $ pip install calorimeter
 
-This is the preferred method to install DSC, as it will always install the most recent stable release.
+This is the preferred method to install Calorimeter, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for DSC can be downloaded from the `Github repo`_.
+The sources for Calorimeter can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/jevandezande/dsc
+    $ git clone git://github.com/jevandezande/calorimeter
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/jevandezande/dsc/tarball/master
+    $ curl -OJL https://github.com/jevandezande/calorimeter/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/jevandezande/dsc
-.. _tarball: https://github.com/jevandezande/dsc/tarball/master
+.. _Github repo: https://github.com/jevandezande/calorimeter
+.. _tarball: https://github.com/jevandezande/calorimeter/tarball/master

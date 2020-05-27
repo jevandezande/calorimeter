@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use DSC in a project::
+To use Calorimeter in a project::
 
-    import dsc
+    import calorimeter

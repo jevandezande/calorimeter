@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """The setup script."""
 
@@ -32,20 +32,20 @@ setup(
     description="Package for manipulting and plotting data from a differential scanning calorimeter.",
     entry_points={
         'console_scripts': [
-            'dsc=dsc.cli:main',
+            'calorimeter=calorimeter.cli:main',
         ],
     },
     install_requires=requirements,
     license="MIT license",
     long_description=f'{readme}\n\n{history}',
     include_package_data=True,
-    keywords='dsc',
-    name='dsc',
-    packages=find_packages(include=['dsc', 'dsc.*']),
+    keywords='calorimeter',
+    name='calorimeter',
+    packages=find_packages(include=['calorimeter', 'calorimeter.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/jevandezande/dsc',
+    url='https://github.com/jevandezande/calorimeter',
     version='0.2.0',
     zip_safe=False,
 )

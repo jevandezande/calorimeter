@@ -6,8 +6,8 @@ from pytest import raises
 
 sys.path.insert(0, '..')
 
-from dsc.tools import (cull, glob_read_csvs, index_of_x, integrate, read_csv,
-                       read_csvs, y_at_x)
+from calorimeter.tools import (cull, glob_read_csvs, index_of_x, integrate, read_csv,
+                               read_csvs, y_at_x)
 
 
 def test_read_csv(tmp_path):

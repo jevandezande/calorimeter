@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=dsc
+set SPHINXPROJ=calorimeter
 
 if "%1" == "" goto help
 

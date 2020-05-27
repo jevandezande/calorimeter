@@ -1,5 +1,5 @@
-Welcome to DSC's documentation!
-======================================
+Welcome to Calorimeter's documentation!
+=======================================
 
 .. toctree::
    :maxdepth: 2

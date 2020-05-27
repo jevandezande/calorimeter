@@ -1,4 +1,4 @@
-* DSC version:
+* Calorimeter version:
 * Python version:
 * Operating System:
 

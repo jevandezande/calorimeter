@@ -3,8 +3,8 @@ import sys
 import matplotlib.pyplot as plt
 sys.path.insert(0, '..')
 
-from dsc.plot import cycle_values, plotter, setup_axis
-from dsc.scan import scans_from_csvs
+from calorimeter.plot import cycle_values, plotter, setup_axis
+from calorimeter.scan import scans_from_csvs
 
 
 def setup():

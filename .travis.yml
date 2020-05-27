@@ -22,5 +22,5 @@ deploy:
     secure: PLEASE_REPLACE_ME
   on:
     tags: true
-    repo: jevandezande/dsc
+    repo: jevandezande/calorimeter
     python: 3.8

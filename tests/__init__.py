@@ -1,1 +1,1 @@
-"""Unit test package for dsc."""
+"""Unit test package for calorimeter."""
