@@ -184,6 +184,21 @@ class Scan:
             val = self.heat_flows.min()
         return self.__class__(self.temps[:], self.heat_flows - val, f'{self.name}')
 
+    def baseline_tilted(self, slope=None, t0=None):
+        """
+        Return a new Scan with the baseline heat_flow slope removed.
+
+        :param slope: the slope (m) of the line to subtract.
+        :param t0: the temperature at which heat_flow should be set to 0. If None, chose start.
+        :return: Scan with the baseline heat_flow slope removed.
+        """
+        if slope is None:
+            slope = (self.heat_flows[-1] - self.heat_flows[0])/(self.temps[-1] - self.temps[0])
+        if t0 is None:
+            t0 = self.temps[0]
+
+        return self.__class__(self.temps[:], self.heat_flows - self._heat_flows(t0) - slope*(self.temps - t0), f'{self.name}')
+
     def set_zero(self, temp, temp2=None):
         """
         Set temp (or range of temps) at which heat_flow (or heat_flow average) is set to 0.

@@ -135,12 +135,24 @@ def test_smoothed():
 
 def test_baseline_subtracted():
     a, b = scans_from_csvs('tests/files/6HAW158.csv', 'tests/files/7HAW008-2.csv')
-    assert all(a.baseline_subtracted().temps == a.temps)
-    assert all(b.baseline_subtracted().temps == b.temps)
+    a_s, b_s = a.baseline_subtracted(), b.baseline_subtracted()
+
+    assert all(a_s.temps == a.temps)
+    assert all(b_s.temps == b.temps)
 
     assert a.baseline_subtracted() == a + 0.0044
     assert b.baseline_subtracted() == b - 0.0044
 
+
+def test_baseline_tilted():
+    a, b = scans_from_csvs('tests/files/6HAW158.csv', 'tests/files/7HAW008-2.csv')
+    a_t, b_t = a.baseline_tilted(0), b.baseline_tilted()
+
+    assert all(a_t.temps == a.temps)
+    assert all(b_t.temps == b.temps)
+
+    aae(a_t.heat_flows, a.heat_flows - 0.1184)
+    aae(b_t.heat_flows, b.heat_flows - b.temps*0.025930736795827424 - 0.33275944)
 
 def test_set_zero():
     a, b = scans_from_csvs('tests/files/6HAW158.csv', 'tests/files/7HAW008-2.csv')
