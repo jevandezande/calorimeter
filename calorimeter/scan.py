@@ -291,6 +291,34 @@ class Scan:
         return self.temps[peaks], properties
 
 
+    def derivative(self, order=1):
+        """
+        Generate the `order` derivative of the scan.
+        """
+        heat_flows = self.heat_flows
+        temps_diff = np.diff(self.temps)
+
+        for i in range(order):
+            heat_flows = np.diff(heat_flows)/temp_diff
+
+        return ScanDerivative(self.temps, self.heat_flows, self.name, order)
+
+
+class ScanDerivative(Scan):
+    def __init__(self, temps, heat_flows, name='', order=None):
+        super().__init__(temps, heat_flows, name)
+
+        if order is None or not isinstance(order, int) or order < 0:
+            raise ValueError('Order must be a positive integer')
+
+        self.order = order
+
+    def derivative(self, order=1):
+        scan_derivative = super().derivative()
+        scan_derivative.order += self.order
+        return scan_derivative
+
+
 def scans_from_csvs(*inps, names=None):
     """
     Read from csvs.

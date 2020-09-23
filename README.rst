@@ -7,7 +7,7 @@ Calorimeter
         :target: https://travis-ci.org/jevandezande/calorimeter
 
 
-Package for manipulting and plotting data from a differential scanning calorimeter.
+Package for manipulating and plotting data from a differential scanning calorimeter.
 
 
 * Free software: MIT license
@@ -16,4 +16,8 @@ Package for manipulting and plotting data from a differential scanning calorimet
 Features
 --------
 
-* TODO
+* Read data from CSV
+* Algelbraically manipulate plots (add, subtract, muliply, and divide)
+* Smooth scans
+* Take derivate of the scan
+* Determine Tg (via second derivative test)

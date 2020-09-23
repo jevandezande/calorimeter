@@ -12,10 +12,12 @@ def plotter(
     scans,
     title=None, style=None,
     baseline_subtracted=False, set_zero=False, normalized=False, smoothed=False, peaks=None,
+    derivative=None,
     plot=None,
     xlim=None, xticks=None, xticks_minor=True, xlabel=None,
     ylim=None, yticks=None, yticks_minor=True, ylabel=None,
     colors=None, markers=None, linestyles=None,
+    derivative_colors=None, derivative_markers=None, derivative_linestyles=None,
     legend=True,
     savefig=None
 ):
@@ -30,12 +32,16 @@ def plotter(
     :param normalized: normalize all of the curves at given point (or highest if True)
     :param smoothed: number of points with which to smooth
     :param peaks: dictionary of peak picking parameters
+    :param derivative: whether to plot scan derivatives (True or `only`)
     :param plot: (figure, axis) on which to plot, generates new figure if None
     :param x*: x-axis setup parameters
     :param y*: y-axis setup parameters
     :param colors: colors to plot the Scans
     :param markers: markers to plot the Scans
     :param linestyles: linestyles to plot the Scans
+    :param derivative_colors: colors to plot the derivatives
+    :param derivative_markers: markers to plot the derivatives
+    :param derivative_linestyles: linestyles to plot the derivatives
     :param legend: boolean to plot legend
     :param savefig: where to save the figure
     :return: figure and axes
@@ -68,7 +74,24 @@ def plotter(
 
     setup_axis(ax, style, title, xlim, xticks, xticks_minor, xlabel, ylim, yticks, yticks_minor, ylabel)
 
+    if derivatives == 'only':
+        scans = [scan.derivative() for scan in scans]
+
     plot_scans(scans, style, ax, markers=markers, linestyles=linestyles, colors=colors, peaks=peaks)
+
+    if derivative is True:
+        if derivative_colors is None:
+            if colors is not None:
+                derivative_colors = colors
+            else:
+                plt.gca().set_prop_cycle(None)
+        if derivative_linestyles is None:
+            derivative_linestyles = '--'
+
+        plot_scans(
+            [scan.derivative() for scan in scans],
+            style, ax, markers=markers, linestyles=derivative_linestyles, colors=derivative_colors, peaks=peaks
+        )
 
     if legend:
         ax.legend()
